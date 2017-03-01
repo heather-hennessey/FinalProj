@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.78.0 commit date:2016-10-24, commit time:12:20, hash:e8299c8</authoring_tool>
+    </contributor>
+    <created>2017-03-01T10:42:28</created>
+    <modified>2017-03-01T10:42:28</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects>
+    <effect id="Smoke-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.2247974 0.2247974 0.2247974 1</color>
+            </diffuse>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 0.5</color>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Smoke-material" name="Smoke">
+      <instance_effect url="#Smoke-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Icosphere-mesh" name="Icosphere">
+      <mesh>
+        <source id="Icosphere-mesh-positions">
+          <float_array id="Icosphere-mesh-positions-array" count="48">-0.2352406 0.7240074 -0.7007352 0.003617823 -0.8922906 0.5237929 -0.584116 0.796989 0.3610039 0.5215458 0.7240079 0.5237914 1.028422 -0.1294452 0.3150173 -0.1781656 0.1294441 0.8889132 0.1781655 -0.1294442 -0.8710033 -0.003617882 -0.8922905 -0.523793 0.8475015 -0.2791752 -0.5237901 -0.8502541 0 -0.6713509 0.527408 0.7197484 -0.5237912 0.3225806 -0.9927978 0.05358964 -0.8898145 -0.520931 0.3567231 -1.043889 0 -0.05358952 0.3225806 0.9927978 0.05358964 0.3389016 -0.2462262 0.9576507</float_array>
+          <technique_common>
+            <accessor source="#Icosphere-mesh-positions-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Icosphere-mesh-normals">
+          <float_array id="Icosphere-mesh-normals-array" count="84">-0.176079 0.1098697 -0.9782254 -0.7363829 0.6139925 -0.2841715 0.7813859 -0.6213827 -0.05761694 -0.3542868 -0.9343845 0.03750604 -0.2570562 0.9546706 -0.1500878 0.8411017 0.5391315 0.04342216 0.5791778 -0.6398118 0.5051673 -0.3166629 -0.3686546 0.8739671 -0.6786159 0.1550765 0.7179358 -0.07968759 0.588059 0.8048829 0.6483368 0.2057401 0.7330282 0.1540758 0.3790245 0.9124699 -0.3817549 -0.3705096 0.8467503 0.8513305 0.5208973 -0.0624693 -0.01674908 0.8649693 0.5015452 -0.817037 0.1877452 0.5451627 -0.3742648 -0.9256278 -0.05602729 0.5746441 -0.6285237 0.5241587 0.09722697 0.9126139 -0.3970931 -0.7795002 0.5767856 -0.2443317 -0.8473592 -0.4598239 -0.2656019 -0.6444063 -0.671831 -0.3652173 0.5286884 -0.7339169 -0.4264441 0.921689 0.2953442 -0.2515176 0.2177498 0.2913186 -0.9315142 -0.2212555 -0.359827 -0.9064054 0.4819527 0.154435 -0.8624798 0.3277442 -0.4549667 -0.8280031</float_array>
+          <technique_common>
+            <accessor source="#Icosphere-mesh-normals-array" count="28" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Icosphere-mesh-vertices">
+          <input semantic="POSITION" source="#Icosphere-mesh-positions"/>
+        </vertices>
+        <polylist material="Smoke-material" count="28">
+          <input semantic="VERTEX" source="#Icosphere-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Icosphere-mesh-normals" offset="1"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>6 0 9 0 0 0 0 1 9 1 2 1 8 2 4 2 11 2 7 3 11 3 12 3 0 4 2 4 14 4 10 5 14 5 4 5 1 6 4 6 15 6 12 7 1 7 5 7 2 8 12 8 5 8 3 9 2 9 5 9 4 10 3 10 15 10 15 11 3 11 5 11 5 12 1 12 15 12 4 13 14 13 3 13 14 14 2 14 3 14 13 15 12 15 2 15 12 16 11 16 1 16 11 17 4 17 1 17 10 18 0 18 14 18 2 19 9 19 13 19 13 20 9 20 12 20 9 21 7 21 12 21 7 22 8 22 11 22 8 23 10 23 4 23 6 24 0 24 10 24 6 25 7 25 9 25 8 26 6 26 10 26 6 27 8 27 7 27</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Icosphere" name="Icosphere" type="NODE">
+        <matrix sid="transform">0.422573 0 0 -1.233549 0 0.3713235 0 -1.020328 0 0 0.5342835 1.438044 0 0 0 1</matrix>
+        <instance_geometry url="#Icosphere-mesh" name="Icosphere">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Smoke-material" target="#Smoke-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
